@@ -38,3 +38,32 @@ page affichée
 Il yaura quelque chose comme ca dans pug :
 each item in items
   li= item
+
+
+
+---------------------------------------------------------------------------
+  Layout.png                               Pug fusionne les deux fichiers. Genre 
+html            
+  head
+    title= title
+  body
+    block content
+
+index.pug
+block content
+    h1 Welcome to Pug ! 
+
+
+------------------------------------------------------------------------------
+Mixins 
+
+mixin userCard(name)                       Create reusable blocks of coding using mixins 
+  div.card
+    h2= name
+
++userCard("Aziz")
++userCard("Alice")
+
+--------------------------------------------------------------------------------
+
+
