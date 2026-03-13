@@ -1,0 +1,18 @@
+app.get('/hello', (req, res) => {             GET sert a récuperer, à voir quelque chose
+  res.send("Hello");
+});
+
+
+app.post('/add', (req, res) => {    Post sert a créer / ajouter quelque chose
+  res.send("Item added");
+});
+
+
+app.put('/update', (req, res) => {        Put sert à modifier quelque chose
+  res.send("Item updated");
+});
+
+
+app.delete('/remove', (req, res) => {    Delete sert à supprimer quelque chose 
+  res.send("Item deleted");
+});
