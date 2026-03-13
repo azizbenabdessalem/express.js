@@ -1,0 +1,73 @@
+<form action="/submit" method="POST">
+  <input type="text" name="username" placeholder="Enter Username">
+  <button type="submit">Submit</button>
+</form>
+
+
+action="/submit"
+Cela signifie :
+👉 l’adresse du serveur qui va recevoir les données.
+Donc quand on clique sur Submit, le navigateur envoie les données à :
+http://localhost:3000/submit
+
+
+app.post('/submit', (req, res) => {
+  const username = req.body.username;
+  res.send('Username: ' + username);
+});
+
+const username = req.body.username;
+Cela signifie :
+👉 récupérer la donnée envoyée par le formulaire.
+Parce que dans le formulaire on avait :
+name="username"
+
+
+<form action="/submit" method="POST">
+  <input type="text" name="username">
+  <input type="email" name="email">
+  <input type="number" name="age">
+  <button type="submit">Submit</button>
+</form>
+
+
+req.body = {
+  username: "Aziz",
+  email: "aziz@mail.com",
+  age: "20"
+}
+
+
+---------------------------------------------------------------------
+
+const bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({ extended: true }));
+
+
+
+Quand un formulaire envoie des données avec POST, le serveur reçoit :
+username=Aziz&age=20
+C’est du texte brut.
+Express ne sait pas automatiquement le transformer en objet.
+Donc sans body parser :
+req.body
+serait :
+undefined
+
+
+----------------------------------------------------
+  
+app.use((err, req, res, next) => {               Gestionnaire d'erreur
+  res.status(500).send("Something went wrong!");
+}); 
+
+
+----------------------------------
+app.get('/user/:id', (req, res) => {
+  res.send('User ID: ' + req.params.id);
+});
+
+URL dynamique	req.params
+Formulaire POST =	req.body
+
+-----------------------------------------------
