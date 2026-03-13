@@ -1,0 +1,9 @@
+app.set("view engine", "pug");          
+app.set("views", "./views"); 
+
+Cela dit à Express :
+
+utilise Pug
+
+les templates sont dans le dossier views
+
