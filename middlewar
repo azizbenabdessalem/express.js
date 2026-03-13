@@ -1,0 +1,21 @@
+middleware
+
+app.use((req, res, next) => {              
+  console.log("Request received");
+  next();
+});
+
+
+Middleware = code exécuté avant les routes.
+
+requête arrive
+↓
+middleware
+↓
+route
+↓
+réponse
+
+ 
+app.use(express.static('public'));           👉 autoriser le serveur à envoyer les fichiers du dossier public.
+ 
