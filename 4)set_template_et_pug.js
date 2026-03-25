@@ -1,5 +1,5 @@
 app.set("view engine", "pug");          
-app.set("views", "./views"); 
+app.set("views", "./views");  //les fichiers pug sont dans le dossier views.
 
 Cela dit à Express :
 
@@ -16,7 +16,7 @@ app.set('view engine', 'pug');
 
 app.get('/', (req, res) => {
   const data = ['Item 1', 'Item 2', 'Item 3'];
-  res.render('index', { items: data });
+  res.render('index', { items: data });           ---->     “Prends le fichier index.pug, mets les données dedans, transforme en HTML, et envoie au navigateur” 
 });
 
 app.listen(3000, () => {
@@ -50,6 +50,8 @@ html
     block content
 
 index.pug
+extends layout
+
 block content
     h1 Welcome to Pug ! 
 
@@ -58,7 +60,7 @@ block content
 Mixins 
 
 mixin userCard(name)                       Create reusable blocks of coding using mixins 
-  div.card
+  div.card    //=<div class="card"></div>
     h2= name
 
 +userCard("Aziz")
