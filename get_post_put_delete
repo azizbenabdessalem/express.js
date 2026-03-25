@@ -1,18 +1,18 @@
-app.get('/hello', (req, res) => {             GET sert a récuperer, à voir quelque chose
+app.get('/hello', (req, res) => {             GET sert a récuperer, à voir quelque chose . Action utilisateur	Requête envoyée	Route utilisée taper URL / cliquer lien 
   res.send("Hello");
 });
 
 
-app.post('/add', (req, res) => {    Post sert a créer / ajouter quelque chose
+app.post('/add', (req, res) => {    Post sert a créer / ajouter quelque chose .  envoyer formulaire
   res.send("Item added");
 });
 
 
-app.put('/update', (req, res) => {        Put sert à modifier quelque chose
+app.put('/update', (req, res) => {        Put sert à modifier quelque chose.  cliquer “modifier” (JS) 
   res.send("Item updated");
 });
 
 
-app.delete('/remove', (req, res) => {    Delete sert à supprimer quelque chose 
+app.delete('/remove', (req, res) => {    Delete sert à supprimer quelque chose  . cliquer “supprimer” (JS) 
   res.send("Item deleted");
 });
